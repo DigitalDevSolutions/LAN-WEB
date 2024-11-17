@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import image1 from "../assets/svg/1.svg";
+---
+
+<div class="flex flex-wrap justify-center w-full max-w-screen-lg mx-auto lg:py-20">
+    <div class="lg:w-1/2 md:px-6 px-10">
+        <h1 class="font-bold md:text-5xl text-4xl">
+            <span class="text-blueLight">Desarrollo de</span> 
+              <span class="text-blueDark">Software a Medida</span>
+        </h1>
+        <p class="lead py-5 text-lg">Transformamos tus ideas en soluciones tecnológicas únicas. Somos una empresa de desarrollo de software lista para llevar tu proyecto al siguiente nivel.</p>
+        <h2 class="text-2xl font-semibold text-gray-800">¿Por qué elegirnos?</h2>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700 py-5">
+            <li>Soluciones personalizadas para cada cliente.</li>
+            <li>Equipo experto en las últimas tecnologías.</li>
+            <li>Compromiso con la calidad y resultados.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-gray-800">¿Tienes una idea? ¡Contáctanos!</h2>
+        <p class="text-lg text-gray-700 pt-5">Envíanos los detalles de tu proyecto y trabajaremos juntos para convertirlo en realidad.</p>				
+    </div>
+    <div>
+        <Image src={image1} format="svg" alt="logo" loading="lazy"/>
+        <!-- <img src="{{asset('/svg/image/1.svg')}}" class="img-fluid" alt="Imagen"> -->
+    </div>
+</div>
+<div class="text-center text-md-start py-10">
+    <a
+        class="inline-block rounded bg-blue-600 px-20 py-5 text-lg font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-blue-500"
+        href="#"
+    >Contactanos</a>
+</div>
