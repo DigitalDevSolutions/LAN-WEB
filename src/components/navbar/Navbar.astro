@@ -1,10 +1,9 @@
 ---
-import { Image } from "astro:assets";
-
-import logo from "../../assets/svg/logo.svg";
-import NavbarItem from "./NavbarItem.astro";
+import { Image }        from "astro:assets";
+import logo             from "../../assets/svg/logo.svg";
+import NavbarItem       from "./NavbarItem.astro";
 ---
-<nav class="block w-full max-w-screen-lg px-4 py-2 mx-auto bg-white rounded-md shadow-md lg:px-8 lg:py-3 sticky top-5">
+<nav class="block w-full max-w-screen-lg px-4 py-2 mx-auto bg-white md:rounded-md md:shadow-md lg:px-8 lg:py-3 sticky md:top-5 top-0 border">
     <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
         <a href="#" class="mr-4">
             <Image src={logo} format="svg" alt="logo" loading="lazy" width={200}/>
@@ -17,7 +16,7 @@ import NavbarItem from "./NavbarItem.astro";
                     </svg>
                     <a href="#" class="flex items-center">Pages</a>
                 </li> -->
-                <NavbarItem title="Inicio" ref="#main"/>
+                <NavbarItem title="Inicio" ref="#"/>
                 <NavbarItem title="Quienes somos" ref="#about-us"/>
                 <NavbarItem title="Servicios" ref="#services"/>
                 <NavbarItem title="Proyectos" ref="#project"/>

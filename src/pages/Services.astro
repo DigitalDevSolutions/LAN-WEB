@@ -1,0 +1,79 @@
+---
+import ItemLeft         from "../components/services/ItemLeft.astro";
+import ItemRight        from "../components/services/ItemRight.astro";
+import image4           from "../assets/svg/4.svg";
+import image5           from "../assets/svg/5.svg";
+import image3           from "../assets/svg/3.svg";
+import image6           from "../assets/svg/6.svg";
+import image8           from "../assets/svg/8.svg";
+import image9           from "../assets/svg/9.svg";
+
+const services          = [
+    {
+        "title"         : "Página web",
+        "description"   : "Creación de páginas web a medida, adaptadas a tus necesidades y objetivos.",
+        "list"          : [
+            "Asesoría personalizada durante todo el proceso.",
+            "Diseño moderno y funcional, optimizado para todos los dispositivos."
+        ],
+        "image"         : image4
+    },
+    {
+        "title"         : "Software",
+        "description"   : "Diseñamos y desarrollamos software personalizado que sea práctico y funcional para usuarios y administradores.",
+        "list"          : [
+            "Herramientas intuitivas que optimizan procesos.",
+            "Desarrollo adaptado a las operaciones de tu empresa."
+        ],
+        "image"         : image5
+    },
+    {
+        "title"         : "Aplicaciones móviles",
+        "description"   : "Desarrollamos aplicaciones móviles a medida, adaptadas a las necesidades específicas de tu negocio y dispositivos.",
+        "list"          : [
+            "Máximo aprovechamiento de la movilidad.",
+            "Experiencia de usuario optimizada para plataformas iOS y Android."
+        ],
+        "image"         : image3
+    },
+    {
+        "title"         : "Integraciones",
+        "description"   : "Conectamos tus sistemas con herramientas y servicios de terceros, mejorando la productividad de tu negocio.",
+        "list"          : [
+            "Integración de APIs populares y personalizadas.",
+            "Automatización de flujos de trabajo."
+        ],
+        "image"         : image6
+    },
+    {
+        "title"         : "Microcontroladores (Arduino)",
+        "description"   : "Desarrollamos soluciones innovadoras con placas Arduino, adaptándonos a tus necesidades específicas.",
+        "list"          : [
+            "Control e integración de hardware.",
+            "Diseño de sistemas personalizados con microcontroladores."
+        ],
+        "image"         : image8
+    },
+    {
+        "title"         : "Consultoría TI",
+        "description"   : "Te ayudamos a dar el primer paso hacia la digitalización de tu negocio, guiándote en cada etapa del proceso.",
+        "list"          : [
+            "Asesoría en transformación digital.",
+            "Identificación y aplicación de tecnologías clave."
+        ],
+        "image"         : image9
+    }
+];
+
+---
+<div class="flex flex-wrap justify-center w-full max-w-screen-lg mx-auto lg:py-20 md:px-6 px-10">
+    <div class="md:pb-20">
+        <h2 class="font-bold md:text-5xl text-4xl">
+            <span class="text-blueLight">Nuestros</span> 
+            <span class="text-blueDark">servicios</span>
+        </h2>
+    </div>
+    {services.map(({title, description, image, list}, index) =>
+        (index % 2 ? <ItemLeft title={title} description={description} image={image} list={list}/> : <ItemRight title={title} description={description} image={image} list={list}/>)
+    )}
+</div>

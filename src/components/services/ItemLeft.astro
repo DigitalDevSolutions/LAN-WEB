@@ -1,0 +1,48 @@
+---
+import { Image }    from "astro:assets";
+import Buttons      from "../ButtonContact.astro";
+
+interface Props {
+    title           : string;
+    description     : string;
+    list            : Array<string>;
+    image           : ImageMetadata;
+};
+
+const { 
+    title, 
+    description, 
+    image, 
+    list 
+}                   = Astro.props;
+const auxTitle      = title.split(" ");
+
+---
+<div class="w-full flex flex-wrap py-20">
+    <div class="md:w-1/2 w-full md:order-1">
+        <Image src={image} format="svg" alt="logo" loading="lazy"/>
+    </div>
+    <div class="md:order-2 md:w-1/2 md:pl-10">
+        <h3 class="font-bold md:text-5xl text-4xl text-center mb-10">
+            {auxTitle.length > 1 ?
+                (
+                    <span class="text-blueLight">{auxTitle[0]}</span> 
+                    <span class="text-blueDark">{auxTitle[1]}</span>
+                )
+                : 
+                <span class="text-blueDark">{auxTitle[0]}</span> 
+            }
+        </h3>
+        <p class="my-4 fs-5 text-xl text-center">
+            {description}
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700 py-5">
+            {list.map((item) => (
+                <li>{item}</li>
+            ))}
+        </ul>
+        <div class="text-center py-5">
+            <Buttons/>
+        </div>
+    </div>
+</div>

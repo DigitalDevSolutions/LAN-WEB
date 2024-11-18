@@ -1,17 +1,23 @@
 ---
-import Layout 	from "../layouts/Layout.astro";
-import Navbar 	from "../components/navbar/Navbar.astro";
-import Main 	from "./Main.astro";
-import AboutUs 	from "./AboutUs.astro";
-import Section 	from "../components/Section.astro";
+import Layout 		from "../layouts/Layout.astro";
+import Navbar 		from "../components/navbar/Navbar.astro";
+import Section 		from "../components/Section.astro";
+import Main 		from "./Main.astro";
+import AboutUs 		from "./AboutUs.astro";
+import Services 	from "./Services.astro";
 ---
 
 <Layout>
-	<Section id="main">
-		<Navbar/>
-		<Main/>
-    </Section>
-	<!-- <Section id="about-us">
-		<AboutUs/>
-    </Section> -->
+	<Navbar/>
+	<main>
+		<Section id="">
+			<Main/>
+		</Section>
+		<Section id="about-us">
+			<AboutUs/>
+		</Section>
+		<Section id="services">			
+			<Services/>
+		</Section>
+	</main>	
 </Layout>
