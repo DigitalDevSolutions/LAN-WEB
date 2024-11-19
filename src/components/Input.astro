@@ -1,0 +1,15 @@
+---
+
+interface Props{
+    type        : string;
+    placeholder : string;
+}
+
+const { type, placeholder } = Astro.props;
+
+---
+<input 
+    type        = {type} 
+    placeholder = {placeholder}
+    class       = "w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blueLight focus:bg-transparent" 
+/>

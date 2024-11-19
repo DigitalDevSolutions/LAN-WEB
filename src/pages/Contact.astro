@@ -1,0 +1,20 @@
+---
+import Button 			from "../components/Button.astro";
+import Input 			from "../components/Input.astro";
+import { Image }        from "astro:assets";
+import image2           from "../assets/svg/2.svg";
+---
+
+<div class="flex flex-wrap justify-center w-full max-w-screen-lg mx-auto lg:pt-20 md:px-6 px-10">
+    <h1 class="text-5xl font-extrabold text-blueDark pb-20">Contáctanos</h1>
+    <div class="flex flex-wrap pt-20 justify-around">
+        <Image src={image2} class="w-[45%]" format="svg" alt="logo" loading="lazy"/>
+        <form class="ml-auto space-y-4 w-1/2">
+            <Input type="text" placeholder="Nombre"/>
+            <Input type="email" placeholder="Email"/>
+            <Input type="text" placeholder="Asunto"/>
+            <textarea placeholder="Mensaje" rows="6" class="w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-blue-500 focus:bg-transparent"></textarea>
+            <Button>Enviar</Button>
+        </form>
+    </div>
+</div>
