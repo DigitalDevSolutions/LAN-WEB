@@ -1,5 +1,5 @@
 ---
-import Button 			from "../components/Button.astro";
+import ButtonContact 	from "../components/ButtonContact.astro";
 import Input 			from "../components/Input.astro";
 import { Image }        from "astro:assets";
 import image2           from "../assets/svg/2.svg";
@@ -7,14 +7,20 @@ import image2           from "../assets/svg/2.svg";
 
 <div class="flex flex-wrap justify-center w-full max-w-screen-lg mx-auto lg:pt-20 md:px-6 px-10">
     <h1 class="text-5xl font-extrabold text-blueDark pb-20">Contáctanos</h1>
-    <div class="flex flex-wrap pt-20 justify-around">
-        <Image src={image2} class="w-[45%]" format="svg" alt="logo" loading="lazy"/>
-        <form class="ml-auto space-y-4 w-1/2">
+    <div class="flex flex-wrap lg:pt-20 justify-around">
+        <Image src={image2} class="w-64" format="svg" alt="logo" loading="lazy"/>
+        <div class="md:w-1/2 md:px-5 text-center">
+            <p class="text-lg font-days-one py-5 pb-10">
+                Contactanos para iniciar tu ieda o proyecto, y haremos que tu visión se vuelva realidad.
+            </p>
+            <ButtonContact/>
+        </div>
+        <!-- <form class="ml-auto space-y-4 w-1/2">
             <Input type="text" placeholder="Nombre"/>
             <Input type="email" placeholder="Email"/>
             <Input type="text" placeholder="Asunto"/>
             <textarea placeholder="Mensaje" rows="6" class="w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-blueLight focus:bg-transparent"></textarea>
             <Button>Enviar</Button>
-        </form>
+        </form> -->
     </div>
 </div>

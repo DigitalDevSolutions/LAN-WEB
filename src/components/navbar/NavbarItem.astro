@@ -6,7 +6,7 @@ interface Props{
 
 const { title, ref } = Astro.props;
 ---
-<li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+<li class="flex items-center p-1 text-sm gap-x-2 text-slate-600 m-auto">
     <!-- <a href={ref} class="flex items-center text-blueDark hover:text-blueLight">{title}</a> -->
     <a href={ref} role="menu" class="flex items-center hover:text-blueLight text-blueDark">{title}</a>
 </li>

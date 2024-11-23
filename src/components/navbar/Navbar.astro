@@ -1,14 +1,16 @@
 ---
 import { Image }        from "astro:assets";
 import logo             from "../../assets/svg/logo.svg";
+import logoMobile       from "../../assets/svg/logoMobile.svg";
 import NavbarItem       from "./NavbarItem.astro";
 ---
 <nav class="block w-full max-w-screen-lg px-4 py-2 mx-auto bg-white md:rounded-md md:shadow-md lg:px-8 lg:py-3 sticky md:top-5 top-0 border bg-white/95">
     <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
         <a href="#" class="mr-4">
-            <Image src={logo} format="svg" alt="logo" loading="lazy" width={200}/>
+            <Image src={logo} class="hidden md:block" format="svg" alt="logo" loading="lazy" width={200}/>
+            <Image src={logoMobile} class="block md:hidden" format="svg" alt="logo" loading="lazy" width={100}/>
         </a>
-        <div class="hidden lg:block font-days-one">
+        <div class="hidden md:block font-days-one">
             <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
                 <!-- <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-slate-500">
@@ -19,15 +21,40 @@ import NavbarItem       from "./NavbarItem.astro";
                 <NavbarItem title="Inicio" ref="#"/>
                 <NavbarItem title="Quienes somos" ref="#about-us"/>
                 <NavbarItem title="Servicios" ref="#services"/>
-                <NavbarItem title="Proyectos" ref="#project"/>
+                <!-- <NavbarItem title="Proyectos" ref="#project"/> -->
+                <NavbarItem title="Contacto" ref="#contact"/>
             </ul>
         </div>
-        <!-- <button class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden" type="button">
+        <button id="btnNav" class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden" type="button">
             <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
             </span>
-        </button> -->
+        </button>
     </div>
-  </nav>
+
+    <div id="dvNav" class="w-full font-days-one hidden md:hidden">
+        <ul class="flex flex-col my-5">
+            <NavbarItem title="Inicio" ref="#"/>
+            <NavbarItem title="Quienes somos" ref="#about-us"/>
+            <NavbarItem title="Servicios" ref="#services"/>
+            <NavbarItem title="Contacto" ref="#contact"/>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const button        = document.getElementById("btnNav");
+    const dvNav         = document.getElementById("dvNav");
+    button?.addEventListener("click", () => {
+        if(dvNav === null) return;
+
+        if(dvNav.classList.contains("hidden")){
+            dvNav.classList.remove("hidden");
+            return;
+        }
+
+        dvNav.classList.add("hidden");
+    });
+</script>
